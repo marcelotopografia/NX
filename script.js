@@ -19,12 +19,14 @@ if (mobileMenuIcon) {
     mobileMenuIcon.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         
-        // Change icon between menu and close
+        // Change icon between menu and close and update a11y
         const icon = mobileMenuIcon.querySelector('ion-icon');
         if (navLinks.classList.contains('active')) {
             icon.setAttribute('name', 'close-outline');
+            mobileMenuIcon.setAttribute('aria-expanded', 'true');
         } else {
             icon.setAttribute('name', 'menu-outline');
+            mobileMenuIcon.setAttribute('aria-expanded', 'false');
         }
     });
 }
@@ -36,6 +38,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         if (mobileMenuIcon) {
             const icon = mobileMenuIcon.querySelector('ion-icon');
             if (icon) icon.setAttribute('name', 'menu-outline');
+            mobileMenuIcon.setAttribute('aria-expanded', 'false');
         }
     });
 });

@@ -30,7 +30,7 @@ html {
 body {
     font-family: var(--font-main);
     background-color: var(--bg-dark);
-    color: var(--text-light);
+    color: var(--text-muted);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -189,7 +189,7 @@ span {
 
 .nav-links a.switch-module:hover {
     background: var(--primary-orange);
-    color: #fff;
+    color: var(--bg-dark);
 }
 
 .nav-links a:hover {
@@ -305,13 +305,11 @@ span {
 
 .badge-text {
     flex-grow: 1;
-    text-align: center;
-    letter-spacing: 2px;
-    color: var(--primary-orange);
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 0.875rem;
+    font-weight: 600;
     text-transform: uppercase;
-    padding-right: 0.5rem;
+    letter-spacing: 1px;
+    color: var(--primary-orange);
 }
 
 @keyframes pulse-glow {
@@ -875,5 +873,54 @@ footer {
     
     .contact-info, .contact-form {
         padding: 2rem;
+    }
+}
+
+/* --- MOBILE FIRST OPTIMIZATIONS --- */
+@media (max-width: 768px) {
+    /* 1. Reduce Layout Shifts and Battery drain from Animations */
+    .fade-up, .fade-in-left, .fade-in-right {
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+
+    /* 2. Floating Action Button (FAB) for WhatsApp */
+    .btn-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        font-size: 0; /* Hide text, show only icon */
+        padding: 0;
+    }
+    .btn-whatsapp ion-icon {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    /* 3. Increase Touch Targets */
+    .nav-links a {
+        padding: 1rem 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .nav-links a.switch-module {
+        margin: 1rem auto;
+        width: 80%;
+    }
+
+    /* 4. Fix Forms Accessibility */
+    input, textarea {
+        font-size: 16px; /* Prevents iOS auto-zoom */
     }
 }
