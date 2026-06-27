@@ -811,11 +811,11 @@ footer {
     .about-grid, .contact-card {
         grid-template-columns: 1fr;
     }
-    
-    .hero h1 {
-        font-size: 5rem;
+
+    .hero .hero-h1 {
+        font-size: 3rem;
     }
-    
+
     .stats-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -891,11 +891,10 @@ footer {
         display: none;
     }
 
-    .hero-h1 {
-        font-size: 1.8rem;
-        line-height: 1.2;
-        word-break: break-word;
-        overflow-wrap: break-word;
+    .hero .hero-h1 {
+        font-size: 1.5rem;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
     }
 
     .hero-top-group {
@@ -905,15 +904,16 @@ footer {
 
     .badge-premium {
         max-width: 100%;
+        margin-bottom: 0.8rem;
     }
 
     .badge-text {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         letter-spacing: 0.5px;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .hero-btns {
@@ -921,12 +921,18 @@ footer {
     }
 
     /* =============================================
-       SECTION TITLES — prevent text overflow
+       SECTIONS — reduce whitespace on mobile
        ============================================= */
+    section {
+        padding: 3rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
     .section-title {
-        font-size: 1.6rem;
-        word-break: break-word;
-        overflow-wrap: break-word;
+        font-size: 1.4rem;
     }
 
     /* =============================================
