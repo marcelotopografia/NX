@@ -40,6 +40,7 @@
     letter-spacing: 1.5px;
     line-height: 1.2;
     text-transform: uppercase;
+    text-align: left;
 }
 .gateway-brand p {
     color: rgba(255,255,255,0.7);
@@ -141,14 +142,17 @@
         align-items: center;
         background: #05070a;
         flex-shrink: 0;
+        transform: none;
+        left: auto;
     }
     .gateway-brand h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin: 0;
-        justify-content: center;
+        max-width: 100%;
     }
     .gateway-brand .brand-sub {
-        font-size: 0.45em;
+        font-size: 0.4em;
+        text-align: left;
     }
     .gateway-split {
         flex-direction: column;
