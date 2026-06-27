@@ -118,6 +118,7 @@
         height: auto;
         min-height: 100vh;
         overflow-y: auto;
+        overflow-x: hidden;
     }
     .gateway-container {
         height: auto;
@@ -126,32 +127,46 @@
     .gateway-split {
         flex-direction: column;
         height: auto;
-        min-height: 100vh;
+        min-height: auto;
     }
     .gateway-brand {
         position: relative;
         top: 0;
         left: 0;
         transform: none;
-        padding: 2rem 1rem;
+        padding: 2rem 1rem 1rem;
+        margin-bottom: 0;
     }
     .gateway-brand h1 {
         font-size: 2rem;
     }
+    .gateway-brand p {
+        font-size: 0.95rem;
+    }
     .gateway-card {
-        min-height: 350px;
+        min-height: 300px;
+        flex: 1;
     }
     .gateway-card:hover {
-        flex: 1; /* Remove the scaling hover effect on mobile that causes layout jumps */
-    }
-    .card-content h2 {
-        font-size: 2rem;
+        flex: 1;
     }
     .card-content {
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+    .card-content ion-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+    }
+    .card-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .card-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
     }
     .btn-gateway {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
     }
 }

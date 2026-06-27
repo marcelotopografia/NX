@@ -25,6 +25,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -821,10 +822,26 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    /* =============================================
+       LAYOUT — prevent horizontal overflow (zoom)
+       ============================================= */
+    .hero-content {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* =============================================
+       NAVBAR — mobile menu
+       ============================================= */
     .navbar .btn {
         display: none;
     }
-    
+
     .nav-links {
         position: absolute;
         top: 100%;
@@ -833,7 +850,7 @@ footer {
         background: rgba(10, 14, 23, 0.98);
         flex-direction: column;
         padding: 2rem;
-        gap: 2rem;
+        gap: 0;
         text-align: center;
         border-bottom: 1px solid var(--border-glass);
         transform: translateY(-150%);
@@ -842,7 +859,7 @@ footer {
         transition: var(--transition);
         z-index: -1;
     }
-    
+
     .nav-links.active {
         transform: translateY(0);
         opacity: 1;
@@ -850,43 +867,118 @@ footer {
     }
 
     .nav-links a {
+        padding: 1rem 0;
+        display: block;
+        width: 100%;
+        text-align: center;
         font-size: 1.2rem;
     }
-    
-    .hero-keywords {
-        display: none; /* Hide vertical keywords on small mobile */
+
+    .nav-links a.switch-module {
+        margin: 1rem auto;
+        width: 80%;
     }
-    
+
     .mobile-menu-icon {
         display: block;
         font-size: 2.5rem;
     }
-    
-    .hero-h1 {
-        font-size: 2.8rem;
+
+    /* =============================================
+       HERO — titles, badge, buttons
+       ============================================= */
+    .hero-keywords {
+        display: none;
     }
-    
+
+    .hero-h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .hero-top-group {
+        width: 100%;
+        display: flex;
+    }
+
+    .badge-premium {
+        max-width: 100%;
+    }
+
+    .badge-text {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
     .hero p {
         font-size: 1rem;
     }
-    
+
     .hero-btns {
         flex-direction: column;
     }
-    
+
+    /* =============================================
+       SECTION TITLES — prevent text overflow
+       ============================================= */
+    .section-title {
+        font-size: 1.6rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* =============================================
+       GRIDS — force single column on small screens
+       ============================================= */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    /* =============================================
+       ABOUT SECTION — qualities pills
+       ============================================= */
+    .about-qualities {
+        flex-direction: column;
+    }
+
+    .about-qualities li {
+        width: 100%;
+    }
+
+    /* =============================================
+       CONTACT — form padding
+       ============================================= */
     .contact-info, .contact-form {
         padding: 2rem;
     }
-}
 
-/* --- MOBILE FIRST OPTIMIZATIONS --- */
-@media (max-width: 768px) {
-    /* 1. Reduce Layout Shifts and Battery drain from Animations */
-    .fade-up, .fade-in-left, .fade-in-right {
-        transition: opacity 0.1s ease !important; /* Make it almost instant instead of breaking transforms */
+    .contact-info h2 {
+        font-size: 1.5rem;
     }
 
-    /* 2. Floating Action Button (FAB) for WhatsApp */
+    /* =============================================
+       BUTTONS — prevent overflow from inline styles
+       ============================================= */
+    .btn {
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    /* =============================================
+       WHATSAPP FAB — floating action button
+       ============================================= */
     .btn-whatsapp {
         position: fixed;
         bottom: 20px;
@@ -899,43 +991,32 @@ footer {
         align-items: center;
         justify-content: center;
         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-        font-size: 0; /* Hide text, show only icon */
+        font-size: 0;
         padding: 0;
     }
+
     .btn-whatsapp ion-icon {
         font-size: 2rem;
         margin: 0;
     }
 
-    /* 3. Increase Touch Targets */
-    .nav-links a {
-        padding: 1rem 0;
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 1.2rem;
-    }
-    .nav-links a.switch-module {
-        margin: 1rem auto;
-        width: 80%;
+    /* =============================================
+       FORMS — prevent iOS auto-zoom on focus
+       ============================================= */
+    input, textarea, select {
+        font-size: 16px !important;
     }
 
-    /* 4. Fix Forms Accessibility */
-    input, textarea {
-        font-size: 16px; /* Prevents iOS auto-zoom */
+    /* =============================================
+       ANIMATIONS — reduce for performance/battery
+       ============================================= */
+    .fade-up, .fade-in-left, .fade-in-right {
+        transition: opacity 0.3s ease !important;
+        transform: none !important;
     }
 
-    /* 5. Fix Hero H1 size */
-    .hero-h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
-    }
-
-    /* 6. Fix Container padding and Grid for small screens */
-    .container {
-        padding: 0 1rem;
-    }
-    .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .fade-up.visible, .fade-in-left.visible, .fade-in-right.visible {
+        opacity: 1 !important;
     }
 }
+
