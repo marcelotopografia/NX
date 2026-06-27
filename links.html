@@ -90,20 +90,22 @@
             width: 100%;
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             color: #fff;
             text-decoration: none;
             padding: 1.2rem 1.25rem;
             transition: all 0.2s ease;
             position: relative;
-            border-radius: 0;
+            border-radius: 12px;
         }
 
         .link-item:hover, .link-item:active {
-            background: rgba(249, 115, 22, 0.15);
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.05));
             border-color: #f97316;
-            transform: translateX(4px);
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         .icon-wrapper {
@@ -124,8 +126,12 @@
         }
 
         .link-text {
-            font-size: 1.05rem;
-            font-weight: 500;
+            font-size: 1.1rem;
+            font-weight: 800;
+            font-style: italic;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Social Side-by-Side container */
@@ -142,8 +148,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             color: #fff;
             text-decoration: none;
             padding: 1rem 0.5rem;
@@ -152,6 +160,9 @@
         }
 
         .social-item:hover, .social-item:active {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.05));
+            border-color: #f97316;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
         }
 
@@ -163,21 +174,11 @@
         }
 
         .social-text {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #ccc;
-        }
-
-        /* Destaca o link do Whatsapp */
-        .social-item.whatsapp:hover, .social-item.whatsapp:active {
-            background: rgba(37, 211, 102, 0.15);
-            border-color: #25D366;
-        }
-        
-        /* Destaca o link do Instagram */
-        .social-item.instagram:hover, .social-item.instagram:active {
-            background: rgba(225, 48, 108, 0.15);
-            border-color: #E1306C;
+            font-size: 0.85rem;
+            font-weight: 800;
+            font-style: italic;
+            color: #fff;
+            text-transform: uppercase;
         }
 
         /* Botão de Compartilhar */
@@ -186,20 +187,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px dashed rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
             color: #fff;
-            padding: 1rem;
-            margin-top: 1rem;
+            padding: 1.2rem;
+            margin-top: 1.5rem;
             cursor: pointer;
             transition: all 0.2s ease;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 1.05rem;
+            font-weight: 800;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .share-btn:hover, .share-btn:active {
-            background: rgba(255, 255, 255, 0.15);
-            border-style: solid;
+            background: linear-gradient(135deg, #ea580c, #c2410c);
+            box-shadow: 0 6px 25px rgba(249, 115, 22, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         .share-btn .icon-wrapper {
@@ -237,14 +244,14 @@
             
             <a href="/cliente" class="link-item">
                 <div class="icon-wrapper">
-                    <img src="public/icon-user.svg" alt="Pessoa Física">
+                    <img src="public/orange-nx.svg" alt="Pessoa Física">
                 </div>
                 <span class="link-text">Para Pessoa Física</span>
             </a>
 
             <a href="/corporativo" class="link-item">
                 <div class="icon-wrapper">
-                    <img src="public/icon-building.svg" alt="Empresas">
+                    <img src="public/orange-nx.svg" alt="Empresas">
                 </div>
                 <span class="link-text">Para Empresas</span>
             </a>
