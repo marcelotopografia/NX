@@ -32,7 +32,7 @@
             width: 100%;
             max-width: 480px;
             height: 100%;
-            padding: 2rem 1.5rem;
+            padding: 2rem 1.5rem 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -40,7 +40,7 @@
 
         .header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -88,10 +88,9 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: #fff;
             text-decoration: none;
-            padding: 1rem 1.25rem;
+            padding: 1.2rem 1.25rem;
             transition: all 0.2s ease;
             position: relative;
-            /* Canto quadrado / sharp edge conforme solicitado */
             border-radius: 0;
         }
 
@@ -102,43 +101,89 @@
         }
 
         .icon-wrapper {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             margin-right: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #f97316;
+            flex-shrink: 0;
         }
 
-        .icon-wrapper img, .icon-wrapper svg {
+        .icon-wrapper img {
             width: 100%;
             height: 100%;
-            fill: currentColor;
             object-fit: contain;
         }
 
         .link-text {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 500;
         }
 
+        /* Social Side-by-Side container */
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 0.5rem;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .social-item:hover, .social-item:active {
+            transform: translateY(-3px);
+        }
+
+        .social-item .icon-wrapper {
+            margin-right: 0;
+            margin-bottom: 0.5rem;
+            width: 28px;
+            height: 28px;
+        }
+
+        .social-text {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #ccc;
+        }
+
         /* Destaca o link do Whatsapp */
-        .link-item.highlight:hover, .link-item.highlight:active {
+        .social-item.whatsapp:hover, .social-item.whatsapp:active {
             background: rgba(37, 211, 102, 0.15);
             border-color: #25D366;
         }
-        .link-item.highlight .icon-wrapper {
-            color: #25D366;
-        }
         
         /* Destaca o link do Instagram */
-        .link-item.highlight-ig:hover, .link-item.highlight-ig:active {
+        .social-item.instagram:hover, .social-item.instagram:active {
             background: rgba(225, 48, 108, 0.15);
             border-color: #E1306C;
         }
-        .link-item.highlight-ig .icon-wrapper {
-            color: #E1306C;
+
+        /* Footer com frase de efeito */
+        .footer-phrase {
+            margin-top: auto;
+            text-align: center;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.5px;
+            padding-top: 2rem;
+            line-height: 1.4;
         }
 
     </style>
@@ -169,20 +214,25 @@
                 <span class="link-text">Para Empresas</span>
             </a>
 
-            <a href="https://wa.me/5598991424677" target="_blank" class="link-item highlight">
-                <div class="icon-wrapper">
-                    <img src="public/icon-whatsapp.svg" alt="WhatsApp">
-                </div>
-                <span class="link-text">Entre em contato conosco (Whatsapp)</span>
-            </a>
+            <div class="social-grid">
+                <a href="https://wa.me/5598991424677" target="_blank" class="social-item whatsapp">
+                    <div class="icon-wrapper">
+                        <img src="public/icon-whatsapp.svg" alt="WhatsApp">
+                    </div>
+                    <span class="social-text">WhatsApp</span>
+                </a>
 
-            <a href="https://instagram.com/nx.projetos" target="_blank" class="link-item highlight-ig">
-                <div class="icon-wrapper">
-                    <img src="public/icon-instagram.svg" alt="Instagram">
-                </div>
-                <span class="link-text">Nos siga nas redes sociais</span>
-            </a>
+                <a href="https://instagram.com/nx.projetos" target="_blank" class="social-item instagram">
+                    <div class="icon-wrapper">
+                        <img src="public/icon-instagram.svg" alt="Instagram">
+                    </div>
+                    <span class="social-text">Instagram</span>
+                </a>
+            </div>
 
+            <footer class="footer-phrase">
+                "Segurança para construir. Precisão para regularizar."
+            </footer>
         </main>
 
     </div>
