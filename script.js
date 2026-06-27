@@ -8,6 +8,12 @@ window.addEventListener('scroll', () => {
         } else {
             navbar.classList.remove('scrolled');
         }
+
+        if (window.scrollY > window.innerHeight * 0.6) {
+            navbar.classList.add('past-hero');
+        } else {
+            navbar.classList.remove('past-hero');
+        }
     }
 });
 

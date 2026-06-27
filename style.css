@@ -169,14 +169,14 @@ span {
 }
 
 /* Hide navbar CTA (and mobile FAB) when at the top to avoid redundancy with Hero CTA */
-.navbar:not(.scrolled) .btn-whatsapp {
+.navbar:not(.past-hero) .btn-whatsapp {
     opacity: 0;
     visibility: hidden;
     transform: scale(0.8);
     transition: all 0.3s ease;
 }
 
-.navbar.scrolled .btn-whatsapp {
+.navbar.past-hero .btn-whatsapp {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
