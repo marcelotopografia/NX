@@ -17,6 +17,11 @@ try {
         $fullPath = Join-Path "C:\Users\nixon\Documents\antigravity\nx-projetos" $path.TrimStart("/")
         $fullPath = $fullPath -replace '/', '\'
         
+        # Support clean URLs locally
+        if (-not (Test-Path $fullPath -PathType Leaf) -and (Test-Path "$fullPath.html" -PathType Leaf)) {
+            $fullPath = "$fullPath.html"
+        }
+        
         if (Test-Path $fullPath -PathType Leaf) {
             $bytes = [System.IO.File]::ReadAllBytes($fullPath)
             $response.ContentLength64 = $bytes.Length

@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/regularizacao.html",
+      "destination": "/cliente",
+      "permanent": true
+    },
+    {
+      "source": "/regularizacao",
+      "destination": "/cliente",
+      "permanent": true
+    }
+  ]
+}
