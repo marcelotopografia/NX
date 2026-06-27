@@ -14,7 +14,7 @@ try {
         $path = $request.Url.LocalPath
         if ($path -eq "/") { $path = "/index.html" }
         
-        $fullPath = Join-Path "C:\Users\nixon\Documents\antigravity\nx-projetos\site" $path.TrimStart("/")
+        $fullPath = Join-Path "C:\Users\nixon\Documents\antigravity\nx-projetos" $path.TrimStart("/")
         $fullPath = $fullPath -replace '/', '\'
         
         if (Test-Path $fullPath -PathType Leaf) {
