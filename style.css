@@ -930,4 +930,12 @@ footer {
         font-size: 2.2rem;
         line-height: 1.2;
     }
+
+    /* 6. Fix Container padding and Grid for small screens */
+    .container {
+        padding: 0 1rem;
+    }
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }

@@ -114,17 +114,35 @@
     color: #fff;
 }
 @media (max-width: 768px) {
+    .gateway-body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+    .gateway-container {
+        height: auto;
+        min-height: 100vh;
+    }
     .gateway-split {
         flex-direction: column;
+        height: auto;
+        min-height: 100vh;
     }
     .gateway-brand {
-        top: 20px;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding: 2rem 1rem;
     }
     .gateway-brand h1 {
         font-size: 2rem;
     }
+    .gateway-card {
+        min-height: 350px;
+    }
     .gateway-card:hover {
-        flex: 1.1;
+        flex: 1; /* Remove the scaling hover effect on mobile that causes layout jumps */
     }
     .card-content h2 {
         font-size: 2rem;
