@@ -201,6 +201,9 @@ span {
     font-size: 2rem;
     cursor: pointer;
     color: var(--text-light);
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
 /* Hero Section */
@@ -880,9 +883,7 @@ footer {
 @media (max-width: 768px) {
     /* 1. Reduce Layout Shifts and Battery drain from Animations */
     .fade-up, .fade-in-left, .fade-in-right {
-        transform: none !important;
-        opacity: 1 !important;
-        transition: none !important;
+        transition: opacity 0.1s ease !important; /* Make it almost instant instead of breaking transforms */
     }
 
     /* 2. Floating Action Button (FAB) for WhatsApp */
@@ -922,5 +923,11 @@ footer {
     /* 4. Fix Forms Accessibility */
     input, textarea {
         font-size: 16px; /* Prevents iOS auto-zoom */
+    }
+
+    /* 5. Fix Hero H1 size */
+    .hero-h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
     }
 }
