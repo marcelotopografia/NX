@@ -25,13 +25,21 @@
     text-align: center;
 }
 .gateway-brand h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: #fff;
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
-.gateway-brand h1 span {
-    color: var(--primary-orange);
+.gateway-brand .brand-sub {
+    font-size: 0.55em;
+    font-weight: 400;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 .gateway-brand p {
     color: rgba(255,255,255,0.7);
@@ -126,7 +134,7 @@
     }
     .gateway-brand {
         position: relative;
-        padding: 1.5rem 1rem;
+        padding: 1.2rem 1rem;
         z-index: 100;
         display: flex;
         justify-content: center;
@@ -135,8 +143,12 @@
         flex-shrink: 0;
     }
     .gateway-brand h1 {
-        font-size: 2.8rem;
+        font-size: 2rem;
         margin: 0;
+        justify-content: center;
+    }
+    .gateway-brand .brand-sub {
+        font-size: 0.45em;
     }
     .gateway-split {
         flex-direction: column;
