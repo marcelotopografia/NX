@@ -209,12 +209,14 @@ span {
 }
 
 .nav-links a.switch-module {
-    background: rgba(249, 115, 22, 0.15);
-    color: var(--primary-orange);
-    border: 1px solid var(--primary-orange);
-    padding: 0.4rem 1.2rem;
-    border-radius: 50px;
+    background: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid var(--primary-orange);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0; /* Square edges */
     margin-left: 1rem;
+    transition: all 0.3s ease;
 }
 
 .nav-links a.switch-module:hover {
