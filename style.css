@@ -200,6 +200,12 @@ span {
     gap: 0.5rem;
 }
 
+.logo-img {
+    height: 38px;
+    width: auto;
+    display: inline-block;
+}
+
 .logo span {
     font-size: 0.8rem;
     font-weight: 500;
@@ -819,6 +825,12 @@ footer {
     margin-top: 0.5rem;
     font-size: 0.8rem;
     font-weight: 300;
+}
+
+.footer-logo {
+    height: 32px;
+    width: auto;
+    display: inline-block;
 }
 
 .footer-links p {
